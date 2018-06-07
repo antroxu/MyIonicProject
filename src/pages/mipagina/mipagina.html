@@ -17,13 +17,16 @@
   </p>
 
   <label for="Peso">Introduce Peso</label>
-  <input type="text" size="3" id="cajaPeso" value ={{peso}}>
+  <input type="text" size="3" id="cajaPeso" [(ngModel)] ="persona.peso">
   <br>
 
   <label for="Altura">Introduce Altura</label>
-  <input type="text" size = "3" id="cajaAltura" value ={{estatura}}>
+  <input type="text" size = "3" id="cajaAltura" [(ngModel)] ="persona.estatura">
   <br><br>
-  
+  <button ion-button (click)="calculaIMC()" color="primary">Calcula IMC</button>
+   <br><br>
+  <input type="text" size = "10" id="cajaResultado" readonly value ={{resultado}}>
+  <br><br>
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
