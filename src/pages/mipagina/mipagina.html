@@ -16,19 +16,37 @@
     Mi primera página en ionic
   </p>
 
-  <label for="Peso">Introduce Peso</label>
-  <input type="text" size="3" id="cajaPeso" [(ngModel)] ="persona.peso">
-  <br>
+  <!-- Que aparezca mientras estas esperando a la persona -->
+  <div *ngIf="!persona_cargada">Esperando persona...</div>
+  <img *ngIf="!persona_cargada" src="assets/imgs/logo.png">
 
-  <label for="Altura">Introduce Altura</label>
-  <input type="text" size = "3" id="cajaAltura" [(ngModel)] ="persona.estatura">
-  <br><br>
-  <button ion-button (click)="calculaIMC()" color="primary">Calcula IMC</button>
-   <br><br>
-  <input type="text" size = "10" id="cajaResultado" readonly value ={{resultado}}>
-  <br><br>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  <div *ngIf="persona_cargada">
 
+    <label for="Peso">Introduce Peso</label>
+    <input type="text" size="3" id="cajaPeso" [(ngModel)]="persona.peso">
+    <br>
+
+    <label for="Altura">Introduce Altura</label>
+    <input type="text" size="3" id="cajaAltura" [(ngModel)]="persona.estatura">
+    <br>
+    <br>
+    <button ion-button (click)="calculaIMC()" color="primary">Calcula IMC</button>
+    <br>
+    <br>
+    <input type="text" size="10" id="cajaResultado" readonly value={{resultado}}>
+    <br>
+    <br>
+    <p>
+      <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    </p>
+
+  </div>
+
+  <div *ngIf="lista_personas">
+    <div *ngFor="let unapersona of lista_personas">
+      <li (click)=mostrarPersona(unapersona)>
+        {{unapersona.nombre}}-{{unapersona.estatura}}-{{unapersona.peso}}
+      </li>
+    </div>
+  </div>
 </ion-content>
