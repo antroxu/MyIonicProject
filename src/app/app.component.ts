@@ -6,6 +6,8 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { MyPage } from '../pages/mipagina/mipagina';
 
+import { ItunesPage } from '../pages/itunes/itunes';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -33,6 +35,7 @@ export class MyApp {
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
       { title: 'My Page', component: MyPage},
+      { title: 'itunes', component: ItunesPage},
     ];
   }
 

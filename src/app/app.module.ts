@@ -8,6 +8,8 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { MyPage } from '../pages/mipagina/mipagina';
 
+import { ItunesPage } from '../pages/itunes/itunes';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    MyPage
+    MyPage,
+    ItunesPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    MyPage
+    MyPage,
+    ItunesPage
   ],
   providers: [
     StatusBar,

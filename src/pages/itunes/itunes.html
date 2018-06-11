@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mi página</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>itunes page...</h3>
+
+  <p>
+    Página de itunes
+  </p>
+
+  <label for="busqueda">Introduce Busqueda</label>
+  <input type="text" size="20" id="cajaBusqueda" [(ngModel)]="textoBusqueda">
+
+  <br>
+
+  <button ion-button (click)="buscaItunes()" color="primary">Buscar en itunes</button>
+
+  <div *ngIf="lista_canciones">
+    <table border=1>
+      <!--<li (click)=mostrarPersona(unapersona)>
+          {{unacancion.nombre}}-{{unacancion.estatura}}-{{unacancion.peso}}
+        </li>-->
+      <tr *ngFor="let unacancion of lista_canciones">
+        <td>{{unacancion.artistName}}</td>
+        <td>
+          <img src="{{unacancion.artworkUrl100}}">
+        </td>
+        <td>{{unacancion.trackPrice}}</td>
+        <td>
+          <audio src = "{{unacancion.previewUrl}}" controls = "true"></audio>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <!-- Que aparezca mientras estas esperando a la persona
+  <div *ngIf="!persona_cargada">Esperando persona...</div>
+  <img *ngIf="!persona_cargada" src="assets/imgs/logo.png">
+
+  <div *ngIf="persona_cargada">
+
+    <label for="Peso">Introduce Peso</label>
+    <input type="text" size="3" id="cajaPeso" [(ngModel)]="persona.peso">
+    <br>
+
+    <label for="Altura">Introduce Altura</label>
+    <input type="text" size="3" id="cajaAltura" [(ngModel)]="persona.estatura">
+    <br>
+    <br>
+    <button ion-button (click)="calculaIMC()" color="primary">Calcula IMC</button>
+    <br>
+    <br>
+    <input type="text" size="10" id="cajaResultado" readonly value={{resultado}}>
+    <br>
+    <br>
+    <p>
+      <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    </p>
+
+  </div>
+
+  <div *ngIf="lista_personas">
+    <div *ngFor="let unapersona of lista_personas">
+      <li (click)=mostrarPersona(unapersona)>
+        {{unapersona.nombre}}-{{unapersona.estatura}}-{{unapersona.peso}}
+      </li>
+    </div>
+  </div> -->
+
+</ion-content>
