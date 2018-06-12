@@ -1,4 +1,4 @@
-export interface CancionItunesi {
+export interface CancionItunes {
 
     artistName: string;
     trackId: string;

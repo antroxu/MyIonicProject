@@ -14,6 +14,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NetworkInterface } from '@ionic-native/network-interface';
+import { Network } from '@ionic-native/network';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,6 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    NetworkInterface,
+    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,4 +1,4 @@
-export class CancionItunes {
+export class CancionItunesBorrar {
 
     artistName: string;
     trackId: string;
