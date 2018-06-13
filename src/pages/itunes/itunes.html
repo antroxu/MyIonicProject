@@ -23,12 +23,29 @@
 
   <button ion-button (click)="buscaItunes()" color="primary">Buscar en itunes</button>
 
+
   <div *ngIf="lista_canciones">
-    <table border=1>
+
+    <ion-slides effect = "cube" pager="true" paginationType="progress" loop="true" slidesPerView="1" style="background-color:olive">  
+      <ion-slide *ngFor="let unacancion of lista_canciones">
+        <h3>{{unacancion.artistName}}</h3>
+        <h3>{{unacancion.trackName}} </h3>
+        <h4> {{unacancion.trackPrice}} {{unacancion.currency}}</h4>
+        <img data-src="{{unacancion.artworkUrl100}}">
+        <audio src="{{unacancion.previewUrl}}" controls="true"></audio>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
+<!--
+
+  <div *ngIf="lista_canciones">
+    <table border=1> -->
       <!--<li (click)=mostrarPersona(unapersona)>
           {{unacancion.nombre}}-{{unacancion.estatura}}-{{unacancion.peso}}
         </li>-->
-      <tr *ngFor="let unacancion of lista_canciones">
+   <!--   <tr *ngFor="let unacancion of lista_canciones">
         <td>{{unacancion.artistName}}</td>
         <td>
           <img src="{{unacancion.artworkUrl100}}">
@@ -41,6 +58,8 @@
 
     </table>
   </div>
+
+-->
 
   <!-- Que aparezca mientras estas esperando a la persona
   <div *ngIf="!persona_cargada">Esperando persona...</div>
