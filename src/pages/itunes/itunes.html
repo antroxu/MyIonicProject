@@ -3,20 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Mi página</ion-title>
+    <ion-title>Buscar itunes...</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-  <h3>itunes page...</h3>
-
-  <p>
-    Página de itunes
-  </p>
-
-  <label for="busqueda">Introduce Busqueda</label>
+  <label for="busqueda">Introduce texto </label>
   <input type="text" size="20" id="cajaBusqueda" [(ngModel)]="textoBusqueda">
 
   <br>
@@ -26,7 +20,7 @@
 
   <div *ngIf="lista_canciones">
 
-    <ion-slides effect = "cube" pager="true" paginationType="progress" loop="true" slidesPerView="1" style="background-color:olive">  
+    <ion-slides effect = "cube" pager="true" paginationType="fraction" loop="true" slidesPerView="1" style="background-color:aqua">  
       <ion-slide *ngFor="let unacancion of lista_canciones">
         <h3>{{unacancion.artistName}}</h3>
         <h3>{{unacancion.trackName}} </h3>
