@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NetworkInterface } from '@ionic-native/network-interface';
 import { Network } from '@ionic-native/network';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +31,8 @@ import { Network } from '@ionic-native/network';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

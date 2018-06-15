@@ -11,6 +11,8 @@ import { ItunesPage } from '../pages/itunes/itunes';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -18,17 +20,41 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
+  //rootPage = HelloIonicPage;
+  rootPage = ItunesPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private storage: Storage
   ) {
     this.initializeApp();
+
+    //this.nav.setRoot(<any>HelloIonicPage);
+    //this.openPage(this.pages[0].component);
+    
+
+    /*storage.get('primera_pagina').then((pp) => {
+      if ((pp = null) || (pp%2 == 0))
+      {//Pagina par
+        this.nav.setRoot(HelloIonicPage);
+        storage.set('primera_pagina', ItunesPage);
+      }
+      else
+      {//Pagina impar
+        this.nav.setRoot(ItunesPage);
+        storage.set('primera_pagina', HelloIonicPage);      
+      };
+    });*/
+
+
+//this.rootPage
+
 
     // set our app's pages
     this.pages = [
@@ -37,6 +63,8 @@ export class MyApp {
       { title: 'My Page', component: MyPage},
       { title: 'itunes', component: ItunesPage},
     ];
+
+    this.openPage(this.pages[0].component);
   }
 
   initializeApp() {
