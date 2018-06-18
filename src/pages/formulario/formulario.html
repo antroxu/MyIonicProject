@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Formulario</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div style="text-align: center">
+
+    <!-- #formulario_login="ngForm" define una variable de tipo ngForm que tiene como atributos value, valid y submitted -->
+    <form #formulario_login="ngForm" (ngSubmit)="acceder(formulario_login.value, formulario_login.valid)">
+
+      <div>
+
+        <ion-item>
+
+          <ion-label>Nombre</ion-label>
+          <!-- #nombre="ngModel" define una variable de tipo ngModel que podemos usar en el html. Tiene como atributos touched, value, valid, pristine y dirty-->
+          <!-- required pattern=".{4,}" define la validacion que vamos a usar -->
+          <ion-input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="login.nombre" required pattern=".{4,}"></ion-input>
+
+        </ion-item>
+
+        <!-- Aparece el texto o no dependiendo de una condición -->
+        <small [hidden]="!(formulario_login.submitted && !nombre.valid)">
+
+          Nombre de al menos 4 letras
+
+        </small>
+
+      </div>
+
+      <div>
+
+        <ion-item>
+
+          <ion-label>Password</ion-label>
+
+          <ion-input type="text" #pwd="ngModel" name="pwd" [(ngModel)]="login.pwd" required></ion-input>
+
+        </ion-item>
+
+        <small [hidden]="!(formulario_login.submitted && !pwd.valid)">
+
+          Contraseña obligatoria
+
+        </small>
+
+      </div>
+
+      <div>
+
+        <ion-item>
+
+          <ion-label>Password repe</ion-label>
+
+          <!--
+          <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" required validateEqual="pwd"></ion-input>
+          -->
+
+          <!-- Quitamos required validateEqual="pwd" que es una directiva personalizada. LA AÑADIREMOS MAS TARDE-->
+          <!-- <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" ></ion-input> -->
+          <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" required validateEqual="pwd"></ion-input>
+
+        </ion-item>
+
+        <small [hidden]="(pwd2.valid || pwd2.pristine)">
+
+          Repita la misma contraseña
+
+        </small>
+
+      </div>
+
+      <button type="submit" ion-button [disabled]=!(formulario_login.valid)>Acceder</button>
+
+    </form>
+
+  </div>
+
+</ion-content>

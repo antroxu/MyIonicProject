@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Storage } from '@ionic/storage';
+import { FormularioComponent } from '../pages/formulario/formulario';
 
 
 @Component({
@@ -19,6 +20,7 @@ import { Storage } from '@ionic/storage';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  //https://blog.angular-university.io/angular-viewchild/
 
   
   // make HelloIonicPage the root (or first) page
@@ -32,7 +34,8 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     private storage: Storage
-  ) {
+    ) {
+
     this.initializeApp();
 
     //this.nav.setRoot(<any>HelloIonicPage);
@@ -52,8 +55,7 @@ export class MyApp {
       };
     });*/
 
-
-//this.rootPage
+    //this.rootPage
 
 
     // set our app's pages
@@ -62,9 +64,9 @@ export class MyApp {
       { title: 'My First List', component: ListPage },
       { title: 'My Page', component: MyPage},
       { title: 'itunes', component: ItunesPage},
+      { title: 'Formulario', component: FormularioComponent},
     ];
 
-    this.openPage(this.pages[0].component);
   }
 
   initializeApp() {

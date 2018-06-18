@@ -18,6 +18,9 @@ import { NetworkInterface } from '@ionic-native/network-interface';
 import { Network } from '@ionic-native/network';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { FormularioComponent } from '../pages/formulario/formulario';
+import { EqualValidator } from './validatorpwd.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,16 @@ import { IonicStorageModule } from '@ionic/storage';
     ItemDetailsPage,
     ListPage,
     MyPage,
-    ItunesPage
+    ItunesPage,
+    FormularioComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +47,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ItemDetailsPage,
     ListPage,
     MyPage,
-    ItunesPage
+    ItunesPage,
+    FormularioComponent
   ],
   providers: [
     StatusBar,
