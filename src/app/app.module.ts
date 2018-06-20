@@ -7,6 +7,7 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { MyPage } from '../pages/mipagina/mipagina';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { ItunesPage } from '../pages/itunes/itunes';
 
@@ -21,6 +22,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { FormularioComponent } from '../pages/formulario/formulario';
 import { EqualValidator } from './validatorpwd.directive';
 import { FormsModule } from '@angular/forms';
+import { MapawebPage } from '../pages/mapaweb/mapaweb';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     MyPage,
     ItunesPage,
     FormularioComponent,
-    EqualValidator
+    EqualValidator,
+    MapawebPage
   ],
   imports: [
     BrowserModule,
@@ -48,14 +51,16 @@ import { FormsModule } from '@angular/forms';
     ListPage,
     MyPage,
     ItunesPage,
-    FormularioComponent
+    FormularioComponent,
+    MapawebPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NetworkInterface,
     Network,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Geolocation
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Storage } from '@ionic/storage';
 import { FormularioComponent } from '../pages/formulario/formulario';
+import { MapawebPage } from '../pages/mapaweb/mapaweb';
 
 
 @Component({
@@ -65,6 +66,7 @@ export class MyApp {
       { title: 'My Page', component: MyPage},
       { title: 'itunes', component: ItunesPage},
       { title: 'Formulario', component: FormularioComponent},
+      { title: 'Mapa', component: MapawebPage}      
     ];
 
   }

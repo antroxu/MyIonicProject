@@ -29,7 +29,7 @@ export class FormularioComponent {
         ok => {
                 console.log ("HA VUELTO");
                 let vresp : HttpResponse<Object> = <HttpResponse<Object>>ok;                
-                console.log ("CUERPO: " + vresp.body.saludo);
+                console.log ("CUERPO: " + vresp.body);
                 console.log ("STATUS: " + vresp.status);
 
               },
